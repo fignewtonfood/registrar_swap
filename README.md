@@ -34,6 +34,8 @@ _You then only need to start up a local PHP server from within the "web" directo
 
 ```
 
+_An export of our database can be found in the db folder_
+
 ## Technologies Used
 _This project makes use of PHP, mySQL, the testing framework [PHPUnit](https://phpunit.de/), the micro-framework [Silex](http://silex.sensiolabs.org/), and uses [Twig](http://twig.sensiolabs.org/) templates._
 
