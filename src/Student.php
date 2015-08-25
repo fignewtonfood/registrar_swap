@@ -14,6 +14,13 @@
 
         }
 
+        function getStudentName()
+        {
+            return $this->student_name;
+        }
+
+        
+
 
 
 

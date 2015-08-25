@@ -1,14 +1,14 @@
 ##Students:
 
-1. Get's user input for student name from database.
+1. Get user input for student name.
 Input: "Bobby"
 Output: "Bobby"
 
-2. Get's id value from database.
+2. Get id value from database.
 Input: 1;
 Output: 1;
 
-3. Get's user input for enrollment date.
+3. Get user input for enrollment date.
 Input: "2015-10-10"
 Output: "2015-10-10";
 

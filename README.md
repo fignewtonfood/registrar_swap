@@ -26,6 +26,12 @@ _You then only need to start up a local PHP server from within the "web" directo
 
 -> USE registrar;
 
+-> CREATE TABLE students (id serial PRIMARY KEY, student_name varchar (255), enroll_date date);
+
+-> CREATE TABLE courses (id serial PRIMARY KEY, course_name varchar (255), course_number varchar (255));
+
+-> CREATE TABLE courses_students (id serial PRIMARY KEY, course_id int, student_id int);
+
 ```
 
 ## Technologies Used
