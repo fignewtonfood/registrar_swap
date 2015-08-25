@@ -23,7 +23,11 @@
         {
             return $this->id;
         }
-        
+
+        function getEnrollDate()
+        {
+            return $this->enroll_date;
+        }
 
 
 
