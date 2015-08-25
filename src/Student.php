@@ -29,10 +29,17 @@
             return $this->id;
         }
 
+        function setEnrollDate($new_enroll_date)
+        {
+                $this->enroll_date = $new_enroll_date;
+        }
+
+
         function getEnrollDate()
         {
             return $this->enroll_date;
         }
+
 
 
 

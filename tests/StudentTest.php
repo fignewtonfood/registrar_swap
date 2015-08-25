@@ -84,6 +84,24 @@
             $this->assertEquals($enroll, $result);
         }
 
+        function test_student_setEnrollDate()
+        {
+            //Arrange
+            $name = "Bobby";
+            $id = 1;
+            $enroll = "2015-10-10";
+            $test_student = new Student($name, $id, $enroll);
+
+            //Act
+            $test_student->setEnrollDate("2016-10-10");
+            $result = $test_student->getEnrollDate();
+
+
+            //Assert
+            $this->assertEquals("2016-10-10", $result);
+        }
+
+
     }
 
 
