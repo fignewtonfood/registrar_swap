@@ -40,12 +40,30 @@
             return $this->enroll_date;
         }
 
+        function save()
+        {
+
+            $statement = $GLOBALS['DB']->exec("INSERT INTO registrar (student_name, enroll_date) VALUES ('{$this->getStudentName()}', '{$this->getEnrollDate()}')");
+            $this->id = $GLOBALS['DB']->lastInsertId();
+
+        }
 
 
 
+        static function getAll()
+        {
+            $returned_students = $GLOBALS['DB']->query("SELECT * FROM registrar ORDER BY enroll_date;");
+            $students = array();
+            foreach($returned_students as $student) {
+                $student_name = $student['student_name'];
+                $id = $student['id'];
+                $enroll_date = $student['enroll_date'];
+                $new_student = new Student($student_name, $id, $enroll_date);
+                array_push($students, $new_student);
+            }
 
-
-
+            return $students;
+        }
 
 
     }
