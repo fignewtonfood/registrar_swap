@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>all students</title>
+    </head>
+    <body>
+        <h1>all students</h1>
+        {% if students is not empty %}
+            <p>Here are your students:</p>
+            <ul>
+                {% for student in students %}
+                    <li><a href="/students/{{ student.getId }}">{{ student.getStudentName }} - {{ student.getEnrollDate }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}<p>There are no students</p>
+        {% endif %}
+
+        <form action = '/students' method='post'>
+            <label for='student_name_twig'>student name</label>
+            <input id='student_name_twig' type="text" name="student_name_twig">
+            <label for='enroll_date_twig'>enroll date</label>
+            <input id='enroll_date_twig' type="date" name="enroll_date_twig">
+            <button type='submit'>submit</button>
+        </form>
+
+        <a href = "/">Home</a>
+    </body>
+</html>
