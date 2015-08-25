@@ -2,7 +2,7 @@
 
 #### _A registrar app built to work with "many to many" mySQL database, 8/25/2015_
 
-#### By _**Charles Moss & Tyler Deem**_
+#### By _**Charles Moss, Tyler Deem, Ike Mattice, Tim White**_
 
 ## Description
 
@@ -19,20 +19,6 @@ $ composer install
 
 _You then only need to start up a local PHP server from within the "web" directory within the project's folder and point your browser to whatever local host server you have created._
 
-## Database Setup
-
-```
--> CREATE DATABASE registrar;
-
--> USE registrar;
-
--> CREATE TABLE students (id serial PRIMARY KEY, student_name varchar (255), enroll_date date);
-
--> CREATE TABLE courses (id serial PRIMARY KEY, course_name varchar (255), course_number varchar (255));
-
--> CREATE TABLE courses_students (id serial PRIMARY KEY, course_id int, student_id int);
-
-```
 
 _An export of our database can be found in the db folder_
 
@@ -41,7 +27,7 @@ _This project makes use of PHP, mySQL, the testing framework [PHPUnit](https://p
 
 ### Legal
 
-Copyright (c) 2015 Charles A Moss & Tyler Deem
+Copyright (c) 2015 Charles A Moss, Tyler Deem, Ike Mattice, Tim White
 
 This software is licensed under the MIT license.
 

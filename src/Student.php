@@ -4,14 +4,13 @@
 
         private $student_name;
         private $enroll_date;
+        private $id;
 
-        function __construct($student_name, $id=null, $enroll_date="0000-00-00")
+        function __construct($student_name, $id=null, $enroll_date)
         {
-
             $this->student_name = $student_name;
             $this->id = $id;
             $this->enroll_date = $enroll_date;
-
         }
 
         function setStudentName($new_student_name)
@@ -31,9 +30,8 @@
 
         function setEnrollDate($new_enroll_date)
         {
-                $this->enroll_date = $new_enroll_date;
+            $this->enroll_date = (string) $new_enroll_date;
         }
-
 
         function getEnrollDate()
         {
@@ -42,17 +40,13 @@
 
         function save()
         {
-
-            $statement = $GLOBALS['DB']->exec("INSERT INTO registrar (student_name, enroll_date) VALUES ('{$this->getStudentName()}', '{$this->getEnrollDate()}')");
+            $GLOBALS['DB']->exec("INSERT INTO students (student_name, enroll_date) VALUES ('{$this->getStudentName()}', '{$this->getEnrollDate()}');");
             $this->id = $GLOBALS['DB']->lastInsertId();
-
         }
-
-
 
         static function getAll()
         {
-            $returned_students = $GLOBALS['DB']->query("SELECT * FROM registrar ORDER BY enroll_date;");
+            $returned_students = $GLOBALS['DB']->query("SELECT * FROM students;");
             $students = array();
             foreach($returned_students as $student) {
                 $student_name = $student['student_name'];
@@ -61,12 +55,7 @@
                 $new_student = new Student($student_name, $id, $enroll_date);
                 array_push($students, $new_student);
             }
-
             return $students;
         }
-
-
     }
-
-
 ?>

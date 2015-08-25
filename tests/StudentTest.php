@@ -8,7 +8,7 @@
     // require_once "src/Course.php";
     require_once "src/Student.php";
 
-    $server = 'mysql:host=localhost;dbname=to_do_test';
+    $server = 'mysql:host=localhost;dbname=registrar_test';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);
@@ -117,7 +117,26 @@
             $this->assertEquals($test_student, $result[0]);
         }
 
+        // function test_getAll()
+        // {
+        //     $name = "Bobby";
+        //     $enroll = "2015-10-10";
+        //     $test_student = new Student($name, $id, $enroll);
+        //     $test_student->save();
+        //
+        //     $name2 = "Sally7";
+        //     $enroll2 = "2000-07-01";
+        //     $test_student2 = new Student($name2, $id, $enroll2);
+        //     $test_student2->save();
+        //
+        //     $result = Student::getAll();
+        //
+        //     $this->assertEquals([$test_student, $test_student2], $result);
+        // }
+
     }
+
+
 
 
 
