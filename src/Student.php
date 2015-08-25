@@ -14,6 +14,11 @@
 
         }
 
+        function setStudentName($new_student_name)
+        {
+            $this->student_name = (string) $new_student_name;
+        }
+
         function getStudentName()
         {
             return $this->student_name;

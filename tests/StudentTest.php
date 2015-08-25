@@ -37,6 +37,23 @@
             $this->assertEquals($name, $result);
         }
 
+        function test_student_setStudentName()
+        {
+            //Arrange
+            $name = "Bobby";
+            $id = 1;
+            $enroll = "2015-10-10";
+            $test_student = new Student($name, $id, $enroll);
+
+            //Act
+            $test_student->setStudentName("Ricky");
+            $result = $test_student->getStudentName();
+
+
+            //Assert
+            $this->assertEquals("Ricky", $result);
+        }
+
         function test_student_getId()
         {
             //Arrange
