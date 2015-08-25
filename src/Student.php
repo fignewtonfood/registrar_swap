@@ -19,7 +19,13 @@
             return $this->student_name;
         }
 
+        function getId()
+        {
+            return $this->id;
+        }
         
+
+
 
 
 
