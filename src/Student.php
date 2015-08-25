@@ -6,7 +6,7 @@
         private $enroll_date;
         private $id;
 
-        function __construct($student_name, $id=null, $enroll_date)
+        function __construct($student_name, $enroll_date, $id=null)
         {
             $this->student_name = $student_name;
             $this->id = $id;
@@ -50,12 +50,31 @@
             $students = array();
             foreach($returned_students as $student) {
                 $student_name = $student['student_name'];
-                $id = $student['id'];
                 $enroll_date = $student['enroll_date'];
-                $new_student = new Student($student_name, $id, $enroll_date);
+                $id = $student['id'];
+                $new_student = new Student($student_name, $enroll_date, $id);
                 array_push($students, $new_student);
             }
             return $students;
         }
+
+        static function deleteAll()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM students;");
+        }
+
+        static function find($search_id)
+        {
+            $found_student = null;
+            $students = Student::getAll();
+            foreach($students as $student) {
+                $student_id = $student->getId();
+                if ($student_id == $search_id) {
+                    $found_student = $student;
+                }
+            }
+            return $found_student;
+        }
+
     }
 ?>
