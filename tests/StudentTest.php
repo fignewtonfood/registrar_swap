@@ -173,5 +173,50 @@
 
             $this->assertEquals($test_student, $result);
         }
+
+        function test_updateName()
+        {
+            $name = "Bobby";
+            $enroll = "2015-10-10";
+            $test_student = new Student($name, $enroll);
+            $test_student->save();
+            $new_name = "Robert";
+
+            $test_student->updateName($new_name);
+            $result = $test_student->getStudentName();
+
+            $this->assertEquals($new_name, $result);
+        }
+
+        function test_updateEnroll()
+        {
+            $name = "Bobby";
+            $enroll = "2015-10-10";
+            $test_student = new Student($name, $enroll);
+            $test_student->save();
+            $new_enroll = "1999-12-31";
+
+            $test_student->updateEnroll($new_enroll);
+            $result = $test_student->getEnrollDate();
+
+            $this->assertEquals($new_enroll, $result);
+        }
+
+        function test_deleteOne()
+        {
+            $name = "Bobby";
+            $enroll = "2015-10-10";
+            $test_student = new Student($name, $enroll);
+            $test_student->save();
+
+            $name2 = "Sally7";
+            $enroll2 = "2000-07-01";
+            $test_student2 = new Student($name2, $enroll2);
+            $test_student2->save();
+
+            $test_student->deleteOne();
+
+            $this->assertEquals([$test_student2], Student::getAll());
+        }
     }
 ?>
